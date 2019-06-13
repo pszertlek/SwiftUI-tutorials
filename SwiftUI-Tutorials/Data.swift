@@ -11,7 +11,7 @@ import UIKit
 import CoreLocation
 import SwiftUI
 
-let landMarkData: [LandMark] = load("landmarkData.json")
+let landMarkData: [Landmark] = load("landmarkData.json")
 
 func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
     let data: Data

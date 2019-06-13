@@ -8,42 +8,79 @@
 
 import SwiftUI
 
-struct LandMarkDetail : View {
-    var landMark: LandMark
+struct CircleImage: View {
+    var image: Image
+    
+    var body: some View {
+        image
+            .clipShape(Circle())
+            .overlay(Circle().stroke(Color.white, lineWidth: 4))
+            .shadow(radius: 10)
+    }
+}
+
+
+struct LandmarkDetail: View {
+    @EnvironmentObject var userData: UserData
+    var landmark: Landmark
+    
+    var landmarkIndex: Int {
+        userData.landmarks.firstIndex(where: { $0.id == landmark.id })!
+    }
+    
     var body: some View {
         VStack {
-            MapView(coordinate: landMark.locationCoordinate)
-                .edgesIgnoringSafeArea(.top)//safe area show this
+            MapView(coordinate: landmark.locationCoordinate)
+                .edgesIgnoringSafeArea(.top)
                 .frame(height: 300)
-            Image("turtlerock")
-                .clipShape(Circle())
-                .overlay(
-                    Circle().stroke(Color.white,lineWidth: 4))
-                .shadow(radius: 10)
+            
+            CircleImage(image: landmark.image(forSize: 250))
                 .offset(x: 0, y: -130)
                 .padding(.bottom, -130)
-            VStack {
-                Text(landMark.name)
-                    .font(.title)
+            
+            VStack(alignment: .leading) {
                 HStack {
-                    Text(landMark.park)
+                    Text(verbatim: landmark.name)
+                        .font(.title)
+                    
+                    Button(action: {
+                        self.userData.landmarks[self.landmarkIndex]
+                            .isFavorite.toggle()
+                    }) {
+                        if self.userData.landmarks[self.landmarkIndex]
+                            .isFavorite {
+                            Image(systemName: "star.fill")
+                                .foregroundColor(Color.yellow)
+                        } else {
+                            Image(systemName: "star")
+                                .foregroundColor(Color.gray)
+                        }
+                    }
+                }
+                
+                HStack(alignment: .top) {
+                    Text(verbatim: landmark.park)
                         .font(.subheadline)
                     Spacer()
-                    Text(landMark.state)
+                    Text(verbatim: landmark.state)
                         .font(.subheadline)
-                    }.padding()
-            }
+                }
+                }
+                .padding()
             
             Spacer()
         }
-            .navigationBarTitle(Text(verbatim: landMark.name), displayMode: .inline)
     }
 }
 
 #if DEBUG
 struct LandMarkDetail_Previews : PreviewProvider {
     static var previews: some View {
-        LandMarkDetail(landMark: landMarkData[0])
+        let userData = UserData()
+
+        return LandmarkDetail(landmark: userData.landmarks[0])
+            .environmentObject(userData)
+        
     }
 }
 #endif
