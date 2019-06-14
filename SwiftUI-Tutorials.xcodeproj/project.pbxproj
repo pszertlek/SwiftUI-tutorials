@@ -41,6 +41,8 @@
 		1840623A22B240C00017851B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1840623822B240C00017851B /* LaunchScreen.storyboard */; };
 		1840624022B241100017851B /* HexagonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840623F22B241100017851B /* HexagonParameters.swift */; };
 		1840624222B242970017851B /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840624122B242970017851B /* Badge.swift */; };
+		1853F58922B395B4001DAAE0 /* BadgeSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853F58822B395B4001DAAE0 /* BadgeSymbol.swift */; };
+		1853F58B22B39A69001DAAE0 /* BadgeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853F58A22B39A69001DAAE0 /* BadgeBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		1840623B22B240C00017851B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1840623F22B241100017851B /* HexagonParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonParameters.swift; sourceTree = "<group>"; };
 		1840624122B242970017851B /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		1853F58822B395B4001DAAE0 /* BadgeSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeSymbol.swift; sourceTree = "<group>"; };
+		1853F58A22B39A69001DAAE0 /* BadgeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,8 @@
 				1840623122B240BF0017851B /* ContentView.swift */,
 				1840623F22B241100017851B /* HexagonParameters.swift */,
 				1840624122B242970017851B /* Badge.swift */,
+				1853F58822B395B4001DAAE0 /* BadgeSymbol.swift */,
+				1853F58A22B39A69001DAAE0 /* BadgeBackground.swift */,
 				1840623322B240C00017851B /* Assets.xcassets */,
 				1840623822B240C00017851B /* LaunchScreen.storyboard */,
 				1840623B22B240C00017851B /* Info.plist */,
@@ -328,9 +334,11 @@
 			files = (
 				1840624022B241100017851B /* HexagonParameters.swift in Sources */,
 				1840624222B242970017851B /* Badge.swift in Sources */,
+				1853F58B22B39A69001DAAE0 /* BadgeBackground.swift in Sources */,
 				1840622E22B240BF0017851B /* AppDelegate.swift in Sources */,
 				1840623022B240BF0017851B /* SceneDelegate.swift in Sources */,
 				1840623222B240BF0017851B /* ContentView.swift in Sources */,
+				1853F58922B395B4001DAAE0 /* BadgeSymbol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
